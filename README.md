@@ -10,7 +10,7 @@ dir1/one                         dir2/one
 dir1/two                         dir2/four
 dir1/subdir1/three               dir2/subdir1/three
 dir1/subdir2/four                dir2/subdir2/five
-                                 dir2/subdir2/six
+                                 dir2/subdir3/six
 ```
 
 In this example, the files named 'one' and 'six' have the exact same contents,
