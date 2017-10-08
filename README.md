@@ -48,7 +48,7 @@ that is specified second, so if we want to list all duplicates in the second
 dir, just reverse the arguments:
 
 ```
-$ treecompare --duplicate dir1 dir2
+$ treecompare --duplicate dir2 dir2
 /home/testuser/temp/dir2/one
 ```
 
