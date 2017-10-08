@@ -49,7 +49,7 @@ dir, just reverse the arguments:
 
 ```
 $ treecompare --duplicate dir1 dir2
-/home/testuser/temp/dir1/one
+/home/testuser/temp/dir2/one
 ```
 
 Note that the file dir2/subdir3/six has the same contents as dir1/one and
@@ -66,10 +66,9 @@ directories, you should use a tool such as fslint or fdupes.
 
 I take no responsibilty if you decide to use this software and if anything goes
 wrong (see LICENCE). But if you do decide to try it and find any problems or
-issues, it is appreciated if you report them.
-
-Also note that this has been written and tested on a Linux machine, it may or
-may not work on Windows. It should work, but I have not tested it.
+issues, it is appreciated if you report them. Also note that this has been
+written and tested on a Linux machine, it may or may not work on Windows. It
+should work, but I have not tested it.
 
 ## Usage
 
