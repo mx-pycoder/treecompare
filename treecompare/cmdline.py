@@ -98,8 +98,6 @@ def main():
             print("one of the specified dirs is not a directory!\n")
         return
 
-        return
-
     else:
         print('specify either --unique, --duplicate or --purge\n')
         parser.print_help()

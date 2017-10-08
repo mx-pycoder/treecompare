@@ -108,7 +108,6 @@ def duplicate(file1, file2):
     f1md5 = _hashlib.md5()
     f2md5 = _hashlib.md5()
 
-
     with open(file1, 'rb') as f1:
         with open(file2, 'rb') as f2:
             # read first block of both files
