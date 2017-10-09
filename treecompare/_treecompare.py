@@ -24,10 +24,9 @@ SOFTWARE.
 '''
 
 import os as _os
-import hashlib as _hashlib
 
 # blocksize when reading files
-BLOCKSIZE = 131072
+BLOCKSIZE = 8388608
 
 
 def _walkdir(dirname):
@@ -105,28 +104,20 @@ def duplicate(file1, file2):
     if f1size == 0:
         return False
 
-    f1md5 = _hashlib.md5()
-    f2md5 = _hashlib.md5()
-
     with open(file1, 'rb') as f1:
         with open(file2, 'rb') as f2:
             # read first block of both files
             f1blk = f1.read(BLOCKSIZE)
             f2blk = f2.read(BLOCKSIZE)
             while len(f1blk) != 0:
-                # keep reading new blocks until eof, and hash blocks
-                f1md5.update(f1blk)
-                f2md5.update(f2blk)
-                # if md5 is already different, no need to continue!
-                if f1md5.hexdigest() != f2md5.hexdigest():
+                if f1blk != f2blk:
+                    # if blocks differ, files differ
                     return False
+                # keep reading new blocks until eof
                 f1blk = f1.read(BLOCKSIZE)
                 f2blk = f2.read(BLOCKSIZE)
-    # if we get here, final check of md5
-    if f1md5.hexdigest() != f2md5.hexdigest():
-        return False
 
-    # md5 equals, this is a duplicate
+    # all blocks are equal: duplicate
     return True
 
 

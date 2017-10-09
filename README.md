@@ -155,8 +155,7 @@ False
 ```
 
 Note that this function does not consider file-path so you can just compare any
-two files this way. Internally, an md5 hash is used to determine if the files
-are equal.
+two files this way.
 
 ## installation
 
