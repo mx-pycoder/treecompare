@@ -65,7 +65,13 @@ def main():
             w = _treecompare.namecomp(dir1, dir2, fullpath=True)
             for (f1, f2) in w:
                 if f1 is not None and f2 is None:
+                    # path only exists in f1, print result
                     print(f1)
+                elif f1 is not None and f2 is not None:
+                    # path exists in both trees, compare contents
+                    if not _treecompare.duplicate(f1, f2):
+                        print(f1)
+
         except ValueError:
             print("DIR1 and DIR2 cannot be the same!\n")
         except FileNotFoundError:
